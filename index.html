@@ -1,1 +1,27 @@
-Hello world!!
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Button Call Function</title>
+<script>
+
+function getLocation() {
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(success, error);
+  } else {
+console.log("Geolocation is not supported by this browser.");
+  }
+}
+
+function success(position) {
+  console.log("Latitude: " + position.coords.latitude +
+  "<br>Longitude: " + position.coords.longitude);
+}
+function error() {
+  alert("Sorry, no position available.");
+}
+</script>
+</head>
+<body>
+  <button onclick="getLocation()">Check In</button>
+</body>
+</html>
